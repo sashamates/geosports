@@ -5,7 +5,7 @@
   height: 100%;
   overflow-y: auto;
   background: var(--bg);
-  padding: 0 0 40px;
+  padding: 0 0 max(40px, env(safe-area-inset-bottom));
 }
 
 .inner {

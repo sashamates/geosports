@@ -10,7 +10,7 @@
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  padding: 24px 18px 48px;
+  padding: 24px 18px max(48px, env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
   gap: 16px;
