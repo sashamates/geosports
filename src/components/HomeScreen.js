@@ -1,3 +1,4 @@
+import { getDailyTheme } from "@/lib/dailyChallenge";
 import StatsPanel from "./StatsPanel";
 import styles from "./HomeScreen.module.css";
 
@@ -14,6 +15,7 @@ export default function HomeScreen({
 }) {
   const regions = questions ? [...new Set(questions.map((q) => q.region).filter(Boolean))] : [];
   const sports  = questions ? [...new Set(questions.map((q) => q.sport).filter(Boolean))]  : [];
+  const theme   = questions ? getDailyTheme(questions) : null;
 
   return (
     <div className={styles.screen}>
@@ -59,6 +61,23 @@ export default function HomeScreen({
               Drop the pin.<br />
               Score by distance.
             </p>
+
+            <div className={styles.todayBox}>
+              <div className={styles.todayLabel}>
+                Daily #{gameNumber}
+                {theme && <span className={styles.themeTag}>{theme}</span>}
+              </div>
+              <div className={styles.todayMeta}>
+                <span>5 questions</span>
+                <span className={styles.dot}>·</span>
+                <span>Max 5,000 pts</span>
+              </div>
+              {regions.length > 0 && (
+                <div className={styles.todayHint}>
+                  🌍 {regions.join(" · ")}
+                </div>
+              )}
+            </div>
 
             {alreadyPlayed ? (
               <div className={styles.doneBox}>
