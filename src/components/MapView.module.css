@@ -68,7 +68,7 @@
 /* ── Tap helper overlay ── */
 .tapHelper {
   position: absolute;
-  bottom: max(180px, calc(env(safe-area-inset-bottom) + 160px));
+  bottom: 64px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -104,4 +104,10 @@
 @keyframes tapBounce {
   0%, 100% { transform: translateX(-50%) translateY(0px);  }
   50%       { transform: translateX(-50%) translateY(-7px); }
+}
+
+@media (max-width: 768px) {
+  .tapHelper {
+    bottom: max(180px, calc(env(safe-area-inset-bottom) + 160px));
+  }
 }

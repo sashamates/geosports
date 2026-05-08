@@ -7,7 +7,7 @@
   background: var(--surface);
   border-top: 3px solid var(--border);
   box-shadow: 0 -4px 0 var(--border);
-  padding: 12px 14px max(160px, env(safe-area-inset-bottom));
+  padding: 12px 14px 16px;
   animation: slideUp 0.22s ease-out;
 }
 
@@ -172,4 +172,10 @@
 .nextBtn:active {
   transform: translate(3px, 3px);
   box-shadow: 1px 1px 0 var(--border);
+}
+
+@media (max-width: 768px) {
+  .panel {
+    padding: 12px 14px max(160px, env(safe-area-inset-bottom));
+  }
 }
