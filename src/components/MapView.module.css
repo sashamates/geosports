@@ -68,7 +68,7 @@
 /* ── Tap helper overlay ── */
 .tapHelper {
   position: absolute;
-  bottom: max(100px, calc(env(safe-area-inset-bottom) + 80px));
+  bottom: max(180px, calc(env(safe-area-inset-bottom) + 160px));
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
