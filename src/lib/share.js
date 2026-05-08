@@ -3,6 +3,7 @@ import { getScoreSquare } from "./resultLabels";
 export function buildShareText(results, gameNumber, totalScore) {
   const total = totalScore ?? results.reduce((s, r) => s + r.score, 0);
   const lines = results.map((r) => `${r.emoji} ${getScoreSquare(r.score)} ${r.score}`);
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
   return [
     `GeoSports #${gameNumber ?? ""}`,
     `${total.toLocaleString()} / 5,000`,
@@ -10,6 +11,7 @@ export function buildShareText(results, gameNumber, totalScore) {
     ...lines,
     "",
     "Read the clue. Drop the pin.",
+    origin,
   ].join("\n");
 }
 
