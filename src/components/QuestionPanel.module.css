@@ -46,9 +46,10 @@
   border: 1.5px solid currentColor;
 }
 
-.difficulty[data-level="easy"]   { color: var(--scoreboard);  }
-.difficulty[data-level="medium"] { color: var(--orange);       }
-.difficulty[data-level="hard"]   { color: var(--red);          }
+.difficulty[data-level="easy"]      { color: var(--scoreboard);  }
+.difficulty[data-level="medium"]    { color: var(--orange);       }
+.difficulty[data-level="hard"]      { color: var(--red);          }
+.difficulty[data-level="deep-cut"]  { color: var(--red); letter-spacing: 0.06em; }
 
 .text {
   font-size: 13px;
