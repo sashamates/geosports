@@ -1,0 +1,58 @@
+.panel {
+  padding: 10px 14px 13px;
+  background: var(--surface-strong);
+  border-bottom: 3px solid var(--border);
+  box-shadow: 0 4px 0 var(--border);
+  flex-shrink: 0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.qCount {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.55;
+  white-space: nowrap;
+}
+
+.sportBadge {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: rgba(23, 32, 42, 0.1);
+  border: 1.5px solid rgba(23, 32, 42, 0.25);
+  border-radius: 5px;
+  padding: 2px 7px;
+}
+
+.difficulty {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1.5px solid currentColor;
+}
+
+.difficulty[data-level="easy"]   { color: var(--scoreboard);  }
+.difficulty[data-level="medium"] { color: var(--orange);       }
+.difficulty[data-level="hard"]   { color: var(--red);          }
+
+.text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+  font-weight: 600;
+}

@@ -1,0 +1,168 @@
+.screen {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  overflow-y: auto;
+  background: var(--bg);
+  padding: 0 0 40px;
+}
+
+.inner {
+  width: 100%;
+  max-width: 480px;
+  padding: 36px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ── Logo ── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoIcon { font-size: 28px; }
+
+.logoText {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+/* ── Tagline ── */
+.tagline {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink);
+  border-left: 4px solid var(--border);
+  padding-left: 14px;
+  background: var(--surface);
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  box-shadow: 3px 3px 0 var(--border);
+  border-radius: 6px;
+}
+
+/* ── Today box ── */
+.todayBox {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.todayLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.todayMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.dot { color: var(--muted); }
+
+/* ── Arcade primary button ── */
+.btnPrimary {
+  width: 100%;
+  padding: 15px 16px;
+  background: var(--orange);
+  color: var(--ink);
+  border: 3px solid var(--border);
+  box-shadow: 5px 5px 0 var(--border);
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+
+.btnPrimary:active {
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 0 var(--border);
+}
+
+/* ── Already-played box ── */
+.doneBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.doneMsg {
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.doneScore {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.doneScore strong {
+  color: var(--scoreboard);
+  font-weight: 900;
+}
+
+.comeBack {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* ── Today's hint tags ── */
+.todayHint {
+  margin-top: 5px;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+/* ── Challenge banner ── */
+.challengeBanner {
+  background: var(--scoreboard-dark);
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.challengeTitle {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--scoreboard-light);
+  margin-bottom: 6px;
+  font-weight: 900;
+}
+
+.challengeTarget {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--surface);
+  font-family: var(--font-display);
+}
+
+.challengeTarget strong {
+  color: var(--yellow);
+}

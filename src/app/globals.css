@@ -1,0 +1,155 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ── Surfaces ── */
+  --bg:             #f4ead5;
+  --surface:        #fff7e6;
+  --surface2:       #fef3dc;
+  --surface-strong: #f8d98b;
+
+  /* ── Text ── */
+  --text:       #17202a;
+  --text-muted: #5f6470;
+  --ink:        #17202a;
+  --muted:      #5f6470;
+
+  /* ── Scoreboard panels ── */
+  --scoreboard:       #163c2f;
+  --scoreboard-dark:  #0c241c;
+  --scoreboard-light: #2ee59d;
+
+  /* ── Borders ── */
+  --border: #1f2933;
+
+  /* ── Accent / colours ── */
+  --accent:     #f26b38;
+  --accent-dim: #c9522a;
+  --orange:     #f26b38;
+  --yellow:     #f6c453;
+  --gold:       #f6c453;
+  --red:        #d64545;
+  --green:      #2ee59d;
+  --blue:       #255c99;
+
+  /* ── Fonts ── */
+  --font:         "Courier New", Courier, monospace;
+  --font-display: system-ui, "Arial Black", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#__next, main {
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── MapLibre chrome — stays dark since map is dark ── */
+.maplibregl-ctrl-logo,
+.maplibregl-ctrl-attrib {
+  opacity: 0.35 !important;
+  transform: scale(0.75);
+  transform-origin: bottom right;
+}
+
+.maplibregl-canvas {
+  outline: none;
+}
+
+.maplibregl-ctrl-group {
+  background: rgba(12, 20, 30, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 4px !important;
+}
+
+.maplibregl-ctrl-group button {
+  color: #e8e8f0 !important;
+  background: transparent !important;
+}
+
+/* ── User pin drop marker ── */
+.user-pin-marker {
+  position: relative;
+  width: 34px;
+  height: 44px;
+  pointer-events: none;
+}
+
+.user-pin-marker__pin {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--blue, #255c99);
+  border: 3px solid #fff7e6;
+  border-radius: 50% 50% 50% 0;
+  transform: translateX(-50%) rotate(-45deg);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.45);
+  animation: userPinDrop 420ms cubic-bezier(.2, .9, .25, 1.25);
+}
+
+.user-pin-marker__pin::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: #fff7e6;
+  border-radius: 50%;
+}
+
+.user-pin-marker__ripple {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  border: 3px solid rgba(37, 92, 153, 0.65);
+  border-radius: 999px;
+  transform: translate(-50%, 50%);
+  animation: userPinRipple 650ms ease-out forwards;
+}
+
+@keyframes userPinDrop {
+  0%   { opacity: 0; transform: translate(-50%, -34px) rotate(-45deg) scale(0.8); }
+  65%  { opacity: 1; transform: translate(-50%,   4px) rotate(-45deg) scale(1.08); }
+  100% { opacity: 1; transform: translate(-50%,   0)   rotate(-45deg) scale(1); }
+}
+
+@keyframes userPinRipple {
+  0%   { opacity: 0.8; width: 8px;  height: 8px; }
+  100% { opacity: 0;   width: 54px; height: 54px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .user-pin-marker__pin,
+  .user-pin-marker__ripple {
+    animation: none;
+  }
+}
+
+/* ── Perfect-pin answer marker pulse ── */
+.perfect-pin-marker {
+  animation: perfectPinPulse 1.6s ease-in-out 0.45s infinite;
+}
+
+@keyframes perfectPinPulse {
+  0%   { box-shadow: 0 0 0  0px rgba(46, 229, 157, 0.8); }
+  60%  { box-shadow: 0 0 0 14px rgba(46, 229, 157, 0);   }
+  100% { box-shadow: 0 0 0  0px rgba(46, 229, 157, 0);   }
+}

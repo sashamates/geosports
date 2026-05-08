@@ -1,0 +1,155 @@
+.header {
+  background: var(--scoreboard-dark);
+  border-bottom: 3px solid var(--border);
+  box-shadow: 0 3px 0 var(--border);
+  flex-shrink: 0;
+}
+
+/* ── Row 1: score + shot clock ── */
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Score card */
+.scoreCard {
+  background: var(--scoreboard);
+  padding: 7px 14px 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.scoreLabel {
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--scoreboard-light);
+  opacity: 0.65;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.scoreNum {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--scoreboard-light);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.scoreDenom {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(46, 229, 157, 0.55);
+  font-family: var(--font);
+}
+
+/* Shot clock */
+.shotClock {
+  background: #0a0c0e;
+  padding: 7px 14px 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.shotClockLabel {
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--surface-strong);
+  opacity: 0.6;
+  line-height: 1;
+  margin-bottom: 1px;
+}
+
+.shotClockTime {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--orange);
+  letter-spacing: 0.04em;
+}
+
+.urgency {
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  opacity: 0.85;
+  margin-top: 1px;
+  animation: urgencyBlink 1s ease-in-out infinite;
+}
+
+/* Warning state (≤ 15 s) */
+.warning .shotClockTime { color: var(--yellow); }
+
+/* Danger state (≤ 5 s) */
+.danger .shotClockTime {
+  color: var(--red);
+  animation: shotClockPulse 0.7s ease-in-out infinite;
+}
+.danger { border-left-color: rgba(214, 69, 69, 0.35); }
+
+@keyframes shotClockPulse {
+  0%, 100% { transform: scale(1);    opacity: 1;    }
+  50%       { transform: scale(1.06); opacity: 0.72; }
+}
+
+@keyframes urgencyBlink {
+  0%, 100% { opacity: 0.85; }
+  50%       { opacity: 0.3; }
+}
+
+/* ── Row 2: branding + Q counter ── */
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 12px;
+  background: var(--scoreboard-dark);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.logoText {
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.gameNum {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.38);
+  letter-spacing: 0.05em;
+}
+
+.qCount {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--surface-strong);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 2px 8px;
+}

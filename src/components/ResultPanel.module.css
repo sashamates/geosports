@@ -1,0 +1,175 @@
+.panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-top: 3px solid var(--border);
+  box-shadow: 0 -4px 0 var(--border);
+  padding: 12px 14px 16px;
+  animation: slideUp 0.22s ease-out;
+}
+
+/* ── Perfect Pin ── */
+.perfectPin {
+  animation: perfectSlide 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  border-top-color: var(--green);
+  box-shadow: 0 -4px 0 var(--border), 0 -8px 28px rgba(46, 229, 157, 0.2);
+}
+
+/* ── Timeout ── */
+.timedOut {
+  border-top-color: var(--red);
+  box-shadow: 0 -4px 0 var(--border);
+}
+
+/* ── Badges ── */
+.perfectBadge {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  color: var(--green);
+  margin-bottom: 8px;
+  animation: badgePop 0.4s 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  text-transform: uppercase;
+}
+
+.timeoutBadge {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--red);
+  margin-bottom: 8px;
+  animation: badgePop 0.4s 0.1s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  text-transform: uppercase;
+  border: 1.5px solid var(--red);
+  border-radius: 4px;
+  padding: 3px 8px;
+}
+
+/* ── Keyframes ── */
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
+
+@keyframes perfectSlide {
+  0%   { transform: translateY(100%) scale(0.97); opacity: 0; }
+  60%  { transform: translateY(0)    scale(1.02); opacity: 1; }
+  100% { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+
+@keyframes badgePop {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* ── Top row: answer + score ── */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.answerBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+  padding-right: 12px;
+}
+
+.answerLbl {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.answerVal {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--orange);
+  word-break: break-word;
+}
+
+.scoreBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  flex-shrink: 0;
+  background: var(--scoreboard-dark);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.scoreNum {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--scoreboard-light);
+  line-height: 1;
+}
+
+.scoreDenom {
+  font-size: 11px;
+  color: rgba(46, 229, 157, 0.5);
+}
+
+/* ── Middle: distance + label ── */
+.middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.dist {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.scoreLabel {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Explanation ── */
+.explanation {
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-bottom: 12px;
+  border-left: 2px solid var(--border);
+  padding-left: 9px;
+}
+
+/* ── Next button ── */
+.nextBtn {
+  width: 100%;
+  padding: 12px;
+  background: var(--orange);
+  color: var(--ink);
+  border: 3px solid var(--border);
+  box-shadow: 4px 4px 0 var(--border);
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+
+.nextBtn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--border);
+}

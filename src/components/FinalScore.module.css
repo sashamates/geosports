@@ -1,0 +1,258 @@
+.screen {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  overflow-y: auto;
+  z-index: 20;
+}
+
+.inner {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 18px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Header ── */
+.head {
+  text-align: center;
+  padding-bottom: 4px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  color: var(--orange);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.sub {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── Total score box ── */
+.totalBox {
+  background: var(--scoreboard-dark);
+  border: 3px solid var(--border);
+  box-shadow: 5px 5px 0 var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.totalLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--scoreboard-light);
+  opacity: 0.6;
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+
+.totalScore {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--scoreboard-light);
+  letter-spacing: -0.01em;
+}
+
+.totalDenom {
+  font-size: 20px;
+  color: rgba(46, 229, 157, 0.5);
+}
+
+.squares {
+  font-size: 26px;
+  margin-top: 12px;
+  letter-spacing: 6px;
+}
+
+/* ── Per-question breakdown ── */
+.breakdown {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(31, 41, 51, 0.12);
+}
+
+.row:last-child { border-bottom: none; }
+
+.rowEmoji {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.rowMeta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rowLabel {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowSport {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.rowSquare { font-size: 18px; flex-shrink: 0; }
+
+.rowScore {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--scoreboard);
+  width: 40px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── Stats grid ── */
+.statsGrid {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--border);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--border);
+  overflow: hidden;
+}
+
+.statCell {
+  background: var(--surface2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  gap: 3px;
+}
+
+.statVal {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--scoreboard);
+}
+
+.statLbl {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 900;
+}
+
+/* ── Challenge result ── */
+.challengeBox {
+  background: var(--scoreboard-dark);
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.challengeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.challengeLbl {
+  font-size: 11px;
+  color: var(--scoreboard-light);
+  opacity: 0.6;
+  letter-spacing: 0.08em;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+
+.challengeVal {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--scoreboard-light);
+}
+
+.challengeOutcome {
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+/* ── Action buttons ── */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.challengeBtn {
+  width: 100%;
+  padding: 13px;
+  background: var(--yellow);
+  color: var(--ink);
+  border: 3px solid var(--border);
+  box-shadow: 4px 4px 0 var(--border);
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+
+.challengeBtn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--border);
+}
+
+.reportLink {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.6;
+  padding-top: 4px;
+}
